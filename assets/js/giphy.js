@@ -7,3 +7,6 @@
 // include a search in column next to the display images/gifs
 // when search is processed button is added to top amongst all other buttons
 
+let topButtons = $('#topic-buttons')
+let giphyDisplay = $('#giphy-display')
+let giphySearch = $('#giphy-search')

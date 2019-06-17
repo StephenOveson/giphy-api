@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script defer src="assets/js/giphy.js"></script>
     <title>Giphy API Usage</title>
 </head>
 <body>
     <div id="topic-buttons"></div>
     <div id="2-columns">
         <div id="giphy-display"></div>
-        <div id="giphy-search"></div>
+        <div id="giphy-search">
+            <form>
+            <input type="text" id="new-giphy-search">
+            <input type="submit" id="submit">
+            </form>
+        </div>
     </div>
 </body>
 </html>
