@@ -7,11 +7,13 @@
 // include a search in column next to the display images/gifs
 // when search is processed button is added to top amongst all other buttons
 let gifTopic = [];
+let gifAnimate = [];
 let topButtons = $('#topic-buttons');
 let giphyDisplay = $('#giphy-display');
 let giphySearch = $('#giphy-search');
 let submit = $('#submit');
 let searchTerm;
+let gifStill;
 
 
 
@@ -54,16 +56,17 @@ function giphyHunter() {
             var gifDiv = $("<div>");
             var rating = results[i].rating;
             var p = $("<p>").text("Rating: " + rating);
-            var gifStill = $("<img>");
+            gifStill = $("<img>");
             gifStill.attr("src", results[i].images.fixed_width_small_still.url);
+            gifAnimate.push()
+            gifStill.on('click', gifHunt)
             gifDiv.prepend(p);
             gifDiv.prepend(gifStill);
-            gifStill.on('click', playGif)
             $("#giphy-display").prepend(gifDiv);
         }
     })
 }
 
-function gifStill() {
-
+function gifHunt(){
+    gifStill.attr('src', response.data.images.original.url)
 }
