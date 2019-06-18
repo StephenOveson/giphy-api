@@ -31,6 +31,7 @@ submit.on('click', function () {
             button.addClass('btn btn-info p-2 m-2 bd-highlight align-content-start flex-wrap')
             button.attr('id', 'giphy-find')
             button.attr('data-gif', gifTopic[x])
+            button.on('click', giphyHunter)
             button.text(gifTopic[x])
             topButtons.append(button)
         }
@@ -38,8 +39,8 @@ submit.on('click', function () {
     }
 });
 
-// Giphy Search using the buttons created on click and labels
-$('#giphy-find').on('click', function () {
+// Giphy Search using the buttons on click function handed them
+function giphyHunter() {
     let search = $(this).attr('data-gif');
     console.log(search);
     let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=z7RPLbJykv68026AD6lRTzuLiLERSaOX&limit=10";
@@ -54,11 +55,15 @@ $('#giphy-find').on('click', function () {
             var rating = results[i].rating;
             var p = $("<p>").text("Rating: " + rating);
             var gifStill = $("<img>");
-            gifStill.attr("src", results[i].images.fixed_height.url);
+            gifStill.attr("src", results[i].images.fixed_width_small_still.url);
             gifDiv.prepend(p);
             gifDiv.prepend(gifStill);
+            gifStill.on('click', playGif)
             $("#giphy-display").prepend(gifDiv);
         }
     })
+}
 
-})
+function gifStill() {
+
+}
