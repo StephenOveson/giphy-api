@@ -19,12 +19,12 @@ let searchTerm;
 // Button Generator
 submit.on('click', function () {
     event.preventDefault();
-    searchTerm = $('#new-giphy-search').val().trim();
-    gifTopic.push(searchTerm)
     topButtons.empty();
     if ($('#new-giphy-search').val() === '') {
         return;
     } else {
+        searchTerm = $('#new-giphy-search').val().trim();
+        gifTopic.push(searchTerm)
         for (x = 0; x < gifTopic.length; x++) {
             $('#new-giphy-search').val("");
             let button = $('<button>');
@@ -34,13 +34,13 @@ submit.on('click', function () {
             button.text(gifTopic[x])
             topButtons.append(button)
         }
+
     }
 });
 
 // Giphy Search using the buttons created on click and labels
-let gifButtons = $('#giphy-find')
-gifButtons.on('click', function () {
-    let search = $(this).attr('data-gif').val().trim();
+$('#giphy-find').on('click', function () {
+    let search = $(this).attr('data-gif');
     console.log(search);
     let queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=z7RPLbJykv68026AD6lRTzuLiLERSaOX&limit=10";
     $.ajax({
