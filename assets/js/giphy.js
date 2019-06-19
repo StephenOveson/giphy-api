@@ -29,7 +29,7 @@ submit.on('click', function () {
         for (x = 0; x < gifTopic.length; x++) {
             $('#new-giphy-search').val("");
             let button = $('<button>');
-            button.addClass('btn btn-info p-2 m-2 bd-highlight align-content-start flex-wrap')
+            button.addClass('p-3 m-2 bd-highlight align-content-start flex-wrap btn btn-outline-light')
             button.attr('id', 'giphy-find')
             button.attr('data-gif', gifTopic[x])
             button.on('click', giphyHunter)
@@ -61,6 +61,7 @@ function giphyHunter() {
             gifStill.attr('data-still', results[i].images.fixed_height_still.url)
             gifStill.attr('data-animate', results[i].images.original.url);
             gifStill.attr('data-state', 'still');
+            gifStill.addClass('rounded')
             gifStill.on('click', gifPlay)
             gifDiv.prepend(p);
             gifDiv.prepend(gifStill);
