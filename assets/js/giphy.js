@@ -51,13 +51,14 @@ function giphyHunter() {
     }).then(function (response) {
         console.log(response)
         var results = response.data;
+        $("#giphy-display").empty();
         for (var i = 0; i < results.length; i++) {
             var gifDiv = $("<div>");
             var rating = results[i].rating;
             var p = $("<p>").text("Rating: " + rating);
             gifStill = $("<img>");
-            gifStill.attr("src", results[i].images.fixed_width_small_still.url);
-            gifStill.attr('data-still', results[i].images.fixed_width_small_still.url)
+            gifStill.attr("src", results[i].images.fixed_height_still.url);
+            gifStill.attr('data-still', results[i].images.fixed_height_still.url)
             gifStill.attr('data-animate', results[i].images.original.url);
             gifStill.attr('data-state', 'still');
             gifStill.on('click', gifPlay)
