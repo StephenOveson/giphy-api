@@ -14,6 +14,7 @@ let submit = $('#submit');
 let searchTerm;
 let gifStill;
 
+$('#topic-buttons').text('Input a topic to try the gif maker!')
 
 
 
